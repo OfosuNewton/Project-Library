@@ -2,16 +2,27 @@
         const myLibrary = [];
         
         // Book Object constructor
-        function Book(title,author,pages,status) {
-              if(!new.target) {
-                throw Error("You must use the 'new' operator to call the constructor");
+        // function Book(title,author,pages,status) {
+        //       if(!new.target) {
+        //         throw Error("You must use the 'new' operator to call the constructor");
+        //     }
+        //     this.title = title;
+        //     this.author = author;
+        //     this.pages = pages;
+        //     this.status = status;
+        //     this.uuid = crypto.randomUUID(); //This is the unique id I will use
+        // };
+
+        //Creating a Book class instead of a plain constructor
+        class Book {
+            constructor (title,author,pages,status) {
+                this.title = title;
+                this.author = author;
+                this.pages = pages;
+                this.status = status;
+                this.uuid = crypto.randomUUID();
             }
-            this.title = title;
-            this.author = author;
-            this.pages = pages;
-            this.status = status;
-            this.uuid = crypto.randomUUID(); //This is the unique id I will use
-        };
+        }
 
              
 
@@ -49,32 +60,6 @@
             myLibrary.push(book); 
         }
 
-
-        // function to display initial data onload
-        // function displayInitialData() {  
-            
-            // let box = document.querySelector('.card-container');
-            // addBookToLibrary('miller','Brine',200,'Read');
-            // addBookToLibrary('Esi','Scouting',201,'Not Read');
-            // addBookToLibrary('Phillip','Marketing',202,"Not Read");
-            //  addBookToLibrary('The Old Man and His Gun','Peter Paul Aidoo',201,"Read");
-            // addBookToLibrary('Ananse And The Wisdom Pot','Kwaku Frimpong',63,'Read');
-            // addBookToLibrary('Debby Sandy and Pepe','Enoch',206,"Not Read");
-        //     console.log(myLibrary);
-
-        //     // looping through each book item to create it's card
-       
-        //     myLibrary.forEach((item) => {
-        //     let card = document.createElement('div');
-        //     card.classList.add('card');
-        //     card.innerHTML = `<h2>Title: ${item.title}</h2>
-        //                     <h3>Author: ${item.author}</h3>
-        //                     <h3>Pages: ${item.pages}</h3>
-        //                     <h3>Status: ${item.status}</h3>
-        //                     <button id="del">Delete</button>`
-        //         box.appendChild(card);  
-        //     });     
-        // }
 
         // function to delete Book from the array and the display as well
           function delete_card() {
@@ -162,23 +147,6 @@ function addBookToLibrary(title, author, pages, status) {
     myLibrary.push(book); 
 }
 
-// And update the final event listener for adding a book
-// const add = document.querySelector(".perform-click-operation");
-// add.addEventListener('click', function(event) {
-//     // ... (Your existing code to get title, author, pages)
-//     let title = document.querySelector('#title').value;
-//     let author = document.querySelector('#author').value;
-//     let pages = document.querySelector('#pages').value;
-    
-//     // We pass the checkbox value, which is fine, but the status is formally set in displayOnScreen
-//     addBookToLibrary(title, author, pages, null); // Pass null or a default, final status set by displayOnScreen
-//     displayOnScreen();
-//     // ...
-// });
-    
-   
-    
-    
 
 
      // selectors to select what we want to work with
