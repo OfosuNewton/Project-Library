@@ -8,48 +8,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
-
-        
-    </style>
-    <script src="main.js" defer></script>
+    <script src="main.js" defer></script>   
 </head>
 <body>
 
     <div class="main-container">
         <div class="header">
-           <div id="txt">Ultimate Book Library</div> 
+           <div id="txt">Ultimate Book Library(UBL).</div> 
            <button class="dialog-btn" data-open-modal>ADD BOOK</button>
         </div>
        
         <div class="card-container">
             <dialog data-modal>
-                <form id="special-form" action="" method="dialog">
+                <form id="special-form" action="" method="dialog" >
                     <div class="label-box">
                         <label for="title">Title:</label>
-                        <input type="text" id="title" class="input-element" name="title" placeholder="Book Title">
+                        <input type="text" id="title" class="input-element" name="title" placeholder="Book Title" required  minlength="6" oninput="this.value = this.value.replace(/[^A-Za-z ]/g,'');">
                     </div>
                     <div class="label-box">
                         <label for="author">Author:</label>
-                        <input type="text" id="author" name="author" class="input-element" placeholder="Authur">
+                        <input type="text" id="author" name="author" class="input-element" placeholder="Authur" required minlength="6" pattern="[A-Za-z ]+">
                     </div>
                     <div class="label-box">
-                        <label for="pages">Title:</label>
+                        <label for="pages">Pages:</label>
                         <input type="number" id="pages" name="pages" class="input-element" placeholder="Select Pages">
                     </div>
                     <div class="label-box-cont">
                         <div class="txt">Have you read this book?</div><input type="checkbox" class="status-check" id="state-check" name="state-check">
-                        
-
                     </div>
 
                     <div class="functionality-btn-cont">
-                    <button class= "perform-click-operation">Add</button>
-                    <button formmethod="dialog" class="perform-click-operation">Cancel</button>
+                        <button  class= "perform-click-operation">Add</button>
+                        <button  formmethod="dialog" class="perform-click-operation" formnovalidate>Cancel</button>
                     </div>
-                
-                    
-                
                 </form>
             </dialog>
         </div>
